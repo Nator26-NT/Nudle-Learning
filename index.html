@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nudle Learning Platform</title>
+    <link rel="stylesheet" href="/static/styles.css" />
+</head>
+
+<body>
+    <!-- ============================ LOGIN VIEW ============================ -->
+    <section id="login-view" class="login-view">
+        <div class="login-card">
+            <div class="brand">
+                <div class="brand-mark">N</div>
+                <div>
+                    <h1>Nudle Learning</h1>
+                    <p class="muted">Interactive learning &amp; simulation platform</p>
+                </div>
+            </div>
+
+            <form id="login-form" class="form" novalidate>
+                <label for="login-email">Email address</label>
+                <input id="login-email" type="email" autocomplete="username" placeholder="you@example.com" required />
+
+                <label for="login-password">Password</label>
+                <input id="login-password" type="password" autocomplete="current-password" placeholder="••••••••" required />
+
+                <div id="login-error" class="error-box" role="alert" hidden></div>
+
+                <button type="submit" class="btn btn-primary" id="login-btn">Sign in</button>
+            </form>
+
+            <div class="demo-accounts">
+                <p class="muted small">Demo accounts</p>
+                <div class="demo-grid">
+                    <button class="demo-btn" data-email="admin@nudle.com" data-password="Admin123!">
+            <strong>Admin</strong>
+            <span>admin@nudle.com</span>
+          </button>
+                    <button class="demo-btn" data-email="learner@nudle.com" data-password="Learner123!">
+            <strong>Learner</strong>
+            <span>learner@nudle.com</span>
+          </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================ APP SHELL ============================ -->
+    <section id="app-view" class="app-view" hidden>
+        <aside class="sidebar">
+            <div class="brand brand--compact">
+                <div class="brand-mark">N</div>
+                <span>Nudle</span>
+            </div>
+            <nav id="sidebar-nav" class="nav"></nav>
+            <div class="sidebar-footer">
+                <div id="user-chip" class="user-chip"></div>
+                <button id="logout-btn" class="btn btn-ghost btn-block">Sign out</button>
+            </div>
+        </aside>
+
+        <div class="main-wrap">
+            <header class="topbar">
+                <button id="menu-toggle" class="icon-btn" aria-label="Toggle menu">☰</button>
+                <h2 id="page-title">Dashboard</h2>
+                <div id="topbar-user" class="topbar-user"></div>
+            </header>
+            <main id="content" class="content"></main>
+        </div>
+    </section>
+
+    <!-- ============================ TOASTS ============================ -->
+    <div id="toast-root" class="toast-root" aria-live="polite"></div>
+
+    <!-- ============================ MODAL ============================ -->
+    <div id="modal-root" class="modal-root" hidden>
+        <div class="modal-backdrop"></div>
+        <div class="modal" role="dialog" aria-modal="true" id="modal-content"></div>
+    </div>
+
+    <script src="/static/app.js" defer></script>
+</body>
+
+</html>
